@@ -19,8 +19,7 @@ Y = dataset[:,13]
 def baseline_model():
 	# create model
 	model = Sequential()
-	model.add(Dense(13, input_dim=13, kernel_initializer='normal', activation='relu'))
-	model.add(Dense(20, kernel_initializer='normal', activation='relu'))
+	model.add(Dense(20, input_dim=13, kernel_initializer='normal', activation='relu'))
 	model.add(Dense(1, kernel_initializer='normal'))
 	# Compile model
 	model.compile(loss='mean_squared_error', optimizer='adam')
