@@ -12,7 +12,7 @@ import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 # load dataset
-dataframe = read_csv("housing.csv", delim_whitespace=True, header=None)
+dataframe = read_csv("files/housing.csv", delim_whitespace=True, header=None)
 dataset = dataframe.values
 # split into input (X) and output (Y) variables
 X = dataset[:,0:13]
