@@ -9,8 +9,9 @@ import os
 def create_model():
     # create model
     model = Sequential()
-    model.add(Dense(20, input_dim=10, kernel_initializer='normal', activation='relu'))
+    model.add(Dense(20, input_dim=8, kernel_initializer='normal', activation='selu'))
     model.add(Dense(10, kernel_initializer='normal', activation='linear'))
+    #model.add(Dense(10, kernel_initializer='normal', activation='selu'))
     model.add(Dense(1, kernel_initializer='normal'))
     # Compile model
     model.compile(loss='mean_squared_error', optimizer='adam')
@@ -18,10 +19,10 @@ def create_model():
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
-dataframe = read_csv("files/f2.csv", header=0)
+dataframe = read_csv("files/f3.csv", header=0)
 dataset = dataframe.values
-X = dataset[:,2:12]
-Y = dataset[:,12]
+X = dataset[:,2:10]
+Y = dataset[:,10]
 
 estimator = KerasRegressor(build_fn=create_model, epochs=500, batch_size=5, verbose=0)
 kfold = KFold(n_splits=10)

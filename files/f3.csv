@@ -1,0 +1,17 @@
+Name,Year,Platform,Language,Team,Size,CodeReuse,Architecture,CustomerQuality,ProjectManagementQuality,Duration
+Singularity_EmbaMunaiGaz,2015,0,5,8,13790,0.0,1,2,0,52
+Singularity_ML,2016,3,0,13,4534,0.0,0,1,0,20
+Singularity_JetX,2016,3,0,9,26892,0.2,1,1,0,68
+Gs_ACG,2017,0,0,6,32065,0.1,1,2,0,44
+SoftLink_Этно Аул,2018,3,5,9,3001,0.0,0,2,0,20
+SoftLink_Энергия Будущего,2018,3,5,9,3903,0.0,0,2,0,16
+SoftLink Виртуальный Тур,2018,3,5,9,3350,0.0,0,2,0,24
+SoftLink KazPost VR-Browser,2018,0,5,9,14725,0.1,1,2,0,36
+SoftLink BCC AR,2018,2,5,9,4629,0.3,0,1,0,32
+SoftLink Uchet.kz,2019,2,5,9,2288,0.2,0,2,0,8
+Samgau AlmatyKSK,2019,1,5,13,71308,0.1,1,2,0,88
+Samgau AlmatyKSKMobile,2019,2,5,8,3161,0.0,0,1,0,32
+Samgau TarazOpenCity,2019,1,5,4,3541,0.6,1,3,0,12
+Samgau SailauBot,2019,1,5,3,474,0.1,1,3,0,3
+Samgau AlmatyKSK Bot,2019,1,5,3,1434,0.5,0,3,0,8
+Halyk уведомления,2019,1,1,7,4682,0.2,3,1,0,16
