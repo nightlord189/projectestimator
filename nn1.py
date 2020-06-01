@@ -9,8 +9,8 @@ import os
 def create_model():
     # create model
     model = Sequential()
-    model.add(Dense(30, input_dim=10, kernel_initializer='normal', activation='relu'))
-    #model.add(Dense(30, kernel_initializer='normal', activation='sigmoid'))
+    model.add(Dense(20, input_dim=10, kernel_initializer='normal', activation='relu'))
+    model.add(Dense(10, kernel_initializer='normal', activation='linear'))
     model.add(Dense(1, kernel_initializer='normal'))
     # Compile model
     model.compile(loss='mean_squared_error', optimizer='adam')
@@ -18,7 +18,8 @@ def create_model():
 
 print ("nn1")
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
-dataframe = read_csv("files/f1.csv", header=0)
+os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
+dataframe = read_csv("files/f2.csv", header=0)
 dataset = dataframe.values
 X = dataset[:,2:12]
 Y = dataset[:,12]
