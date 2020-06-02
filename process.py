@@ -96,7 +96,8 @@ def processExperience():
                 item.CodeReuse=float(row[8])/100.0
                 item.Architecture=row[9]
                 item.CustomerQuality=row[10]
-                item.PMQuality=row[11]
+                d=row[11]
+                item.ProjectManagementQuality=d
                 item.Duration=row[12]
                 result.append(item)
     return result

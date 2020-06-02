@@ -10,7 +10,7 @@ from tensorflow.python.client import device_lib
 def create_model():
     # create model
     model = Sequential()
-    model.add(Dense(20, input_dim=8, kernel_initializer='normal', activation='selu'))
+    model.add(Dense(20, input_dim=7, kernel_initializer='normal', activation='selu'))
     model.add(Dense(10, kernel_initializer='normal', activation='linear'))
     #model.add(Dense(10, kernel_initializer='normal', activation='selu'))
     model.add(Dense(1, kernel_initializer='normal'))
@@ -23,8 +23,8 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
 dataframe = read_csv("files/f3.csv", header=0)
 dataset = dataframe.values
-X = dataset[:,2:10]
-Y = dataset[:,10]
+X = dataset[:,2:9]
+Y = dataset[:,9]
 
 estimator = KerasRegressor(build_fn=create_model, epochs=500, batch_size=5, verbose=0)
 kfold = KFold(n_splits=10)

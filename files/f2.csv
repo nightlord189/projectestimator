@@ -1,17 +1,17 @@
 Name,Year,Platform,Language,Team,SizeMetric,Size,DevelopmentMode,CodeReuse,Architecture,CustomerQuality,ProjectManagementQuality,Duration
-Singularity_EmbaMunaiGaz,2015,0,5,8,1,13790,0,0.0,1,2,0,52
-Singularity_ML,2016,3,0,13,1,4534,0,0.0,0,1,0,20
-Singularity_JetX,2016,3,0,9,1,26892,0,0.2,1,1,0,68
-Gs_ACG,2017,0,0,6,1,32065,0,0.1,1,2,0,44
-SoftLink_Этно Аул,2018,3,5,9,1,3001,0,0.0,0,2,0,20
-SoftLink_Энергия Будущего,2018,3,5,9,1,3903,0,0.0,0,2,0,16
-SoftLink Виртуальный Тур,2018,3,5,9,1,3350,0,0.0,0,2,0,24
-SoftLink KazPost VR-Browser,2018,0,5,9,1,14725,0,0.1,1,2,0,36
-SoftLink BCC AR,2018,2,5,9,1,4629,0,0.3,0,1,0,32
-SoftLink Uchet.kz,2019,2,5,9,1,2288,0,0.2,0,2,0,8
-Samgau AlmatyKSK,2019,1,5,13,1,71308,0,0.1,1,2,0,88
-Samgau AlmatyKSKMobile,2019,2,5,8,1,3161,0,0.0,0,1,0,32
-Samgau TarazOpenCity,2019,1,5,4,1,3541,1,0.6,1,3,0,12
-Samgau SailauBot,2019,1,5,3,1,474,0,0.1,1,3,0,3
-Samgau AlmatyKSK Bot,2019,1,5,3,1,1434,1,0.5,0,3,0,8
-Halyk уведомления,2019,1,1,7,1,4682,0,0.2,3,1,0,16
+Singularity_EmbaMunaiGaz,2015,0,5,8,1,13790,0,0.0,1,2,2,52
+Singularity_ML,2016,3,0,13,1,4534,0,0.0,0,1,1,20
+Singularity_JetX,2016,3,0,9,1,26892,0,0.2,1,1,1,68
+Gs_ACG,2017,0,0,6,1,32065,0,0.1,1,2,1,44
+SoftLink_Этно Аул,2018,3,5,9,1,3001,0,0.0,0,2,3,20
+SoftLink_Энергия Будущего,2018,3,5,9,1,3903,0,0.0,0,2,3,16
+SoftLink Виртуальный Тур,2018,3,5,9,1,3350,0,0.0,0,2,3,24
+SoftLink KazPost VR-Browser,2018,0,5,9,1,14725,0,0.1,1,2,2,36
+SoftLink BCC AR,2018,2,5,9,1,4629,0,0.3,0,1,1,32
+SoftLink Uchet.kz,2019,2,5,9,1,2288,0,0.2,0,2,1,8
+Samgau AlmatyKSK,2019,1,5,13,1,71308,0,0.1,1,2,1,88
+Samgau AlmatyKSKMobile,2019,2,5,8,1,3161,0,0.0,0,1,1,32
+Samgau TarazOpenCity,2019,1,5,4,1,3541,1,0.6,1,3,1,12
+Samgau SailauBot,2019,1,5,3,1,474,0,0.1,1,3,2,3
+Samgau AlmatyKSK Bot,2019,1,5,3,1,1434,1,0.5,0,3,1,8
+Halyk уведомления,2019,1,1,7,1,4682,0,0.2,3,1,1,16
