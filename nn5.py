@@ -28,6 +28,6 @@ X = dataset[:,6:7]
 Y = dataset[:,12]
 
 estimator = KerasRegressor(build_fn=create_model, epochs=500, batch_size=5, verbose=0)
-kfold = KFold(n_splits=5)
+kfold = KFold(n_splits=2)
 results = cross_val_score(estimator, X, Y, cv=kfold)
 print("Baseline: %.2f (%.2f) MSE" % (results.mean(), results.std()))

@@ -19,30 +19,14 @@ def create_model():
     model.compile(loss='mean_squared_error', optimizer='adam')
     return model
 
-#print(device_lib.list_local_devices())
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
-os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
+print(device_lib.list_local_devices())
 dataframe = read_csv("files/f4.csv", header=0)
 dataset = dataframe.values
 X = dataset[:,2:8]
 Y = dataset[:,8]
 
-estimator = KerasRegressor(build_fn=create_model, epochs=500, batch_size=5, verbose=0)
-kfold = KFold(n_splits=10)
+estimator = KerasRegressor(build_fn=create_model, epochs=1500, batch_size=5, verbose=0)
+kfold = KFold(n_splits=2)
 results = cross_val_score(estimator, X, Y, cv=kfold)
 print("Baseline: %.2f (%.2f) MSE" % (results.mean(), results.std()))
-
-#print ("testing")
-#dataframe_fit = read_csv("files/f4_fit.csv", header=0)
-#dataset_fit = dataframe_fit.values
-#X_fit = dataset[:,2:9]
-#Y_fit = dataset[:,9]
-#estimator.fit(X_fit, Y_fit)
-
-#dataframe_test = read_csv("files/f4_test.csv", header=0)
-#dataset_test = dataframe_test.values
-#X_test = dataset[:,2:9]
-#Y_test = dataset[:,9]
-
-#prediction = estimator.predict(X_test)
-#accuracy_score(Y_test, prediction)
