@@ -37,3 +37,67 @@ class FinalModel:
                      self.ProjectManagementQuality,
                      self.Duration
                      ])
+    def getColumns (self):
+        return ['Name',
+                'Year',
+                'Platform',
+                'Language',
+                'Team',
+                'SizeMetric',
+                'Size',
+                'DevelopmentMode',
+                'CodeReuse',
+                'Architecture',
+                'CustomerQuality',
+                'ProjectManagementQuality',
+                'Duration']
+
+    def toArr4(self):
+        return iter([self.Name,
+                     self.Year,
+                     self.Platform,
+                     self.Team,
+                     self.Size,
+                     self.CodeReuse,
+                     self.CustomerQuality,
+                     self.ProjectManagementQuality,
+                     self.Duration
+                     ])
+
+    def getColumns4 (self):
+        return ['Name',
+                'Year',
+                'Platform',
+                'Team',
+                'Size',
+                'CodeReuse',
+                'CustomerQuality',
+                'ProjectManagementQuality',
+                'Duration']
+
+    def toArr3(self):
+        return iter([self.Name,
+                     self.Year,
+                     self.Platform,
+                     self.Language,
+                     self.Team,
+                     self.Size,
+                     self.CodeReuse,
+                     self.Architecture,
+                     self.CustomerQuality,
+                     self.ProjectManagementQuality,
+                     self.Duration
+                     ])
+
+    def getColumns3 (self):
+        return ['Name',
+                'Year',
+                'Platform',
+                'Language',
+                'Team',
+                'Size',
+                'CodeReuse',
+                'Architecture',
+                'CustomerQuality',
+                'ProjectManagementQuality',
+                'Duration']
