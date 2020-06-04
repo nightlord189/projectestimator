@@ -13,7 +13,7 @@ import numpy
 def create_model():
     # create model
     model = Sequential()
-    model.add(Dense(20, input_dim=6, kernel_initializer='normal', activation='selu'))
+    model.add(Dense(20, input_dim=10, kernel_initializer='normal', activation='selu'))
     model.add(Dense(10, kernel_initializer='normal', activation='linear'))
     model.add(Dense(1, kernel_initializer='normal'))
     model.compile(loss='mean_squared_error', optimizer='adam')
@@ -22,13 +22,13 @@ def create_model():
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 #print(device_lib.list_local_devices())
-dataframe = read_csv("files/f4.csv", header=0)
+dataframe = read_csv("files/f2.csv", header=0)
 dataset = dataframe.values
-X = dataset[:,2:8]
-Y = dataset[:,8]
+X = dataset[:,2:12]
+Y = dataset[:,12]
 
 estimator = KerasRegressor(build_fn=create_model)
-estimator.fit(X, Y, epochs=500, batch_size=5, verbose=False, shuffle=False)
+estimator.fit(X, Y, epochs=1500, batch_size=5, verbose=False, shuffle=False)
 prediction = estimator.predict(X)
 prediction=tools.round_arr(prediction)
 
