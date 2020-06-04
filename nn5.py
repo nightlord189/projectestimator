@@ -7,27 +7,34 @@ from sklearn.model_selection import KFold
 from sklearn.metrics import accuracy_score
 from tensorflow.python.client import device_lib
 import os
+import tools
+import numpy
 
 def create_model():
     # create model
     model = Sequential()
-    model.add(Dense(20, input_dim=1, kernel_initializer='normal', activation='selu'))
+    model.add(Dense(20, input_dim=6, kernel_initializer='normal', activation='selu'))
     model.add(Dense(10, kernel_initializer='normal', activation='linear'))
-    #model.add(Dense(10, kernel_initializer='normal', activation='selu'))
     model.add(Dense(1, kernel_initializer='normal'))
-    # Compile model
     model.compile(loss='mean_squared_error', optimizer='adam')
     return model
 
-#print(device_lib.list_local_devices())
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
-os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
-dataframe = read_csv("files/f2.csv", header=0)
-dataset = dataframe.values
-X = dataset[:,6:7]
-Y = dataset[:,12]
 
-estimator = KerasRegressor(build_fn=create_model, epochs=500, batch_size=5, verbose=0)
-kfold = KFold(n_splits=2)
-results = cross_val_score(estimator, X, Y, cv=kfold)
-print("Baseline: %.2f (%.2f) MSE" % (results.mean(), results.std()))
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+print(device_lib.list_local_devices())
+dataframe = read_csv("files/f4.csv", header=0)
+dataset = dataframe.values
+X = dataset[:,2:8]
+Y = dataset[:,8]
+
+estimator = KerasRegressor(build_fn=create_model)
+estimator.fit(X, Y, epochs=500, batch_size=5, verbose=False, shuffle=False)
+prediction = estimator.predict(X)
+print (Y)
+prediction=tools.round_arr(prediction)
+print (numpy.array(prediction))
+print("Baseline: %.2f, std %.2f " % (tools.mean(Y, prediction), tools.std(Y, prediction)))
+#estimator = KerasRegressor(build_fn=create_model, epochs=1500, batch_size=5, verbose=0)
+#kfold = KFold(n_splits=2)
+#results = cross_val_score(estimator, X, Y, cv=kfold)
+#print("Baseline: %.2f (%.2f) MSE" % (results.mean(), results.std()))
