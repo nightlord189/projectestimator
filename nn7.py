@@ -24,14 +24,20 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 #print(device_lib.list_local_devices())
 dataframe = read_csv("files/f2.csv", header=0)
 dataset = dataframe.values
-X = dataset[:,2:12]
-Y = dataset[:,12]
+numpy.random.seed(2)
+numpy.random.shuffle(dataset)
+
+X_train = dataset[0:10,2:12]
+Y_train = dataset[0:10,12]
+
+X_test = dataset[10:,2:12]
+Y_test = dataset[10:,12]
 
 estimator = KerasRegressor(build_fn=create_model)
-estimator.fit(X, Y, epochs=1500, batch_size=5, verbose=False, shuffle=False)
-prediction = estimator.predict(X)
+estimator.fit(X_test, Y_test, epochs=1500, batch_size=5, verbose=False, shuffle=False)
+prediction = estimator.predict(X_test)
 prediction=tools.round_arr(prediction)
 
-print (Y)
+print (Y_test)
 print (numpy.array(prediction))
-print("Baseline: %.2f, std %.2f " % (tools.mean(Y, prediction), tools.std(Y, prediction)))
+print("Baseline: %.2f, std %.2f " % (tools.mean(Y_test, prediction), tools.std(Y_test, prediction)))
