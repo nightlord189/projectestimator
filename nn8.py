@@ -23,7 +23,7 @@ def exportAndVisualize(model):
     model_json = model.to_json()
     with open("output/model.json", "w") as json_file:
         json_file.write(model_json)
-    ann_viz(model, title="Artificial Neural network - Model Visualization")
+    ann_viz(model, filename='output/network.gv', title="Project estimation")
 
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
