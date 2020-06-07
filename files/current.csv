@@ -1,2 +1,2 @@
-Name,Year,Platform,Language,Team,SizeMetric,Size,DevelopmentMode,CodeReuse,Architecture,CustomerQuality,ProjectManagementQuality
-SoftLink KazPost Assistant,2018,3,5,9,1,10128,1,0.2,0,2,1
+Name,Year,Platform,Language,Team,SizeMetric,Size,DevelopmentMode,CodeReuse,Architecture,CustomerQuality,ProjectManagementQuality,Duration
+SoftLink KazPost Assistant,2018,3,5,9,1,10128,1,0.2,0,2,1,35
