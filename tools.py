@@ -9,6 +9,15 @@ def round_arr(arr):
         i += 1
     return result
 
+def convertPredictArray (arr):
+    i=0
+    result=[None]*len(arr)
+    while i < len(arr):
+        r=arr[i]
+        result[i]=arr[i][0]
+        i += 1
+    return result
+
 def mean (data, prediction):
     diff=[None]*len(data)
     if len(data)!=len(prediction):
