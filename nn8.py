@@ -8,7 +8,6 @@ import numpy
 from ann_visualizer.visualize import ann_viz
 
 def create_model():
-    # create model
     model = Sequential()
     model.add(Dense(20, input_dim=10, kernel_initializer='normal', activation='selu'))
     model.add(Dense(10, kernel_initializer='normal', activation='linear'))
