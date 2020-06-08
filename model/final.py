@@ -7,7 +7,7 @@ class FinalModel:
     Platform =0 #0 - Generic, 1 - Web, 2 - Mobile, 3 - Desktop
     Language =0  # 0 - Generic, 1 - Js, 2 - Go, 3 - Python, 4 - Java-like, 5 - C#, 6 - C++, 7 - C, 8 - PHP, 9 - Delphi/Pascal
     #project team
-    #rank: 1-junior, 3-middle, 5-seniour
+    #rank: 1-junior, 3-middle, 5-senior
     #time mode: 1 - fulltime (8 hours/work day), 0.125 - parttime 1 hour/work day, i.e
     #team=sum (rank_i*time_i)
     #example - 1 fulltime junior and 1 parttime (4 hour) seniour: team=1*1+5*0.5=3.5
