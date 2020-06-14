@@ -6,6 +6,7 @@ import os
 import tools
 import numpy
 from ann_visualizer.visualize import ann_viz
+import matplotlib.pyplot as plt
 
 def create_model():
     model = Sequential()
@@ -24,6 +25,13 @@ def exportAndVisualize(model):
         json_file.write(model_json)
     ann_viz(model, filename='output/network.gv', title="Project estimation")
 
+def createPlot (history):
+    plt.plot(history.history['loss'], label='MAE (testing data)')
+    plt.title('Project Estimator MAE')
+    plt.ylabel('MAE value')
+    plt.xlabel('No. epoch')
+    plt.legend(loc="upper left")
+    plt.show()
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 #print(device_lib.list_local_devices())
@@ -42,8 +50,8 @@ X_test = dataset[10:,2:12]
 Y_test = dataset[10:,12]
 
 model=create_model()
-model.fit(X_test, Y_test, epochs=1500, batch_size=5, verbose=False, shuffle=False)
-
+history=model.fit(X_train, Y_train, epochs=1500, batch_size=5, verbose=False, shuffle=False)
+#createPlot(history)
 exportAndVisualize(model)
 
 prediction = model.predict(X_test)

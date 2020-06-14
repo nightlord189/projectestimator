@@ -2,10 +2,6 @@ from pandas import read_csv
 from keras.models import Sequential
 from keras.layers import Dense
 from keras.wrappers.scikit_learn import KerasRegressor
-from sklearn.model_selection import cross_val_score
-from sklearn.model_selection import KFold
-from sklearn.metrics import accuracy_score
-from tensorflow.python.client import device_lib
 import os
 import tools
 import numpy
@@ -21,7 +17,6 @@ def create_model():
 
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
-#print(device_lib.list_local_devices())
 dataframe = read_csv("files/f2.csv", header=0)
 dataset = dataframe.values
 numpy.random.seed(2)
@@ -34,7 +29,7 @@ X_test = dataset[10:,2:12]
 Y_test = dataset[10:,12]
 
 estimator = KerasRegressor(build_fn=create_model)
-estimator.fit(X_test, Y_test, epochs=1500, batch_size=5, verbose=False, shuffle=False)
+estimator.fit(X_train, Y_train, epochs=1500, batch_size=5, verbose=False, shuffle=False)
 prediction = estimator.predict(X_test)
 prediction=tools.round_arr(prediction)
 
