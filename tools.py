@@ -24,7 +24,7 @@ def mean (data, prediction):
         raise Exception('array lengths are not the same!')
     i=0
     while i<len(data):
-        diff[i]=prediction[i]-data[i]
+        diff[i]=abs(prediction[i]-data[i])
         i += 1
     arr = numpy.array(diff)
     return numpy.mean(arr, axis=0)
@@ -35,7 +35,7 @@ def std (data, prediction):
         raise Exception('array lengths are not the same!')
     i=0
     while i<len(data):
-        diff[i]=prediction[i]-data[i]
+        diff[i]=abs(prediction[i]-data[i])
         i += 1
     arr = numpy.array(diff)
     return numpy.std(arr, axis=0)
